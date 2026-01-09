@@ -1,0 +1,32 @@
+{
+    "__name": "English",
+    "META_DATA": {
+        "title": "Kvant System – IT Services & Innovative Technology Solutions in Uzbekistan",
+        "description": "Kvant System is a professional IT company in Uzbekistan delivering IT services, server solutions, cybersecurity, network infrastructure, and business digital transformation.",
+        "keywords": "IT services, server solutions, cybersecurity, network infrastructure, digital transformation, IT company Uzbekistan, CTA services, ATM network solutions, SaaS solutions, B2B IT support, IT outsourcing, cloud services Uzbekistan, enterprise IT, IT support, camera installation, server installation, computer assembly, office computer setup, video surveillance systems, IT services prices in Uzbekistan",
+        "about_meta": "About Kvant System – Trusted IT Company in Uzbekistan",
+        "about_meta_description": "Kvant System is a reliable IT solutions provider in Uzbekistan, offering server management, video surveillance systems, office and home IT infrastructure, computer equipment, and technical support to help businesses grow.",
+        "about_meta_keywords": "Kvant System, IT company Uzbekistan, IT solutions provider, server management, video surveillance systems, office IT infrastructure, home IT setup, computer equipment, technical support, business IT services",
+        "services_meta": "Kvant System Services – Professional IT Solutions",
+        "services_meta_description": "We provide end-to-end IT services, including IT outsourcing, server setup and maintenance, video surveillance, network installation, cybersecurity, and technical support for businesses."
+    },
+    "Navbar": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services"
+    },
+    "HomePage": {
+        "welcome": "IT support and maintenance",
+        "welcome_sub": "From advanced technology to enterprise devices, we manage everything to keep your business secure, efficient, and scalable.",
+        "explore_services": "Explore service"
+    },
+    "AboutPage": {
+        "title": "Reliable IT Solutions for Business Growth and Security",
+        "subtitle": "We provide IT services, digital solutions, and technical support to help your business grow and stay secure.",
+        "team_title": "Meet Our Expert Team"
+    },
+    "ServicesPage": {
+        "title": "Services",
+        "subtitle": "Kvant System delivers devices and digital solutions that help businesses launch, secure, and grow in today’s connected world."
+    }
+}

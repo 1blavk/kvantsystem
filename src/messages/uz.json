@@ -1,0 +1,32 @@
+{
+    "__name": "O'zbek",
+    "META_DATA": {
+        "title": "Kvant System – O‘zbekistonda IT xizmatlar, serverlar va xavfsizlik texnologiyalari",
+        "description": "Kvant System O‘zbekistonda professional IT xizmatlar, server o‘rnatish, video kuzatuv kameralari, tarmoq sozlash va biznesni raqamlashtirish bo‘yicha innovatsion yechimlarni taklif etadi.",
+        "keywords": "IT xizmatlar, server yechimlari, kiberxavfsizlik, tarmoq infratuzilmasi, raqamli transformatsiya, IT kompaniya O‘zbekiston, CTA xizmatlar, ATM tarmoq yechimlari, SaaS yechimlar, B2B IT qo‘llab-quvvatlash, IT autsorsing, bulutli xizmatlar O‘zbekiston, korporativ IT, IT qo‘llab-quvvatlash, kamera o'rnatish, server o'rnatish, kompyuter yig'ish, ofis uchun kompyuter yig'ish, video kuzatuv tizimlari, IT xizmatlar narxlari O‘zbekistonda",
+        "about_meta": "Kvant System haqida – O‘zbekistondagi ishonchli IT kompaniya",
+        "about_meta_description": "Kvant System – O‘zbekistonda faoliyat yurituvchi professional IT kompaniya. Biz serverlar, ofis va uy kameralar, kompyuter texnikasi, tarmoq infratuzilmasi va texnik qo‘llab-quvvatlash xizmatlarini taqdim etamiz.",
+        "about_meta_keywords": "Kvant System, IT kompaniya O‘zbekiston, IT yechimlar provayderi, server boshqaruvi, video kuzatuv tizimlari, ofis IT infratuzilmasi, uy IT infratuzilmasi, kompyuter uskunalari, texnik qo‘llab-quvvatlash, biznes IT xizmatlari",
+        "services_meta": "Kvant System xizmatlari – IT xizmatlar va texnik yechimlar",
+        "services_meta_description": "Biz IT autsorsing, server sozlash, video kuzatuv tizimlari, kompyuterlar va tarmoqlarni o‘rnatish, kiberxavfsizlik va texnik xizmat ko‘rsatish bo‘yicha kompleks yechimlarni taklif qilamiz."
+    },
+    "Navbar": {
+        "home": "Bosh sahifa",
+        "about": "Biz haqimizda",
+        "services": "Xizmatlar"
+    },
+    "HomePage": {
+        "welcome": "Texnik xizmatlar",
+        "welcome_sub": "Ilg‘or texnologiyalardan tortib korporativ qurilmalargacha — biznesingiz xavfsiz, samarali va kengayishga tayyor bo‘lishi uchun barcha jarayonlarni biz boshqaramiz.",
+        "explore_services": "Xizmatlarni ko‘rish"
+    },
+    "AboutPage": {
+        "title": "Biznesingizni rivojlantirish va xavfsizligini ta’minlash uchun ishonchli yechimlar",
+        "subtitle": "Biznesingizni rivojlantirish va xavfsizligini ta’minlash uchun IT xizmatlar, raqamli yechimlar va texnik qo‘llab-quvvatlashni taqdim etamiz.",
+        "team_title": "Mutaxassis jamoamiz bilan tanishing"
+    },
+    "ServicesPage": {
+        "title": "Xizmatlar",
+        "subtitle": "Kvant System biznesingizni ishga tushirish, xavfsizligini ta’minlash va rivojlantirishga yordam beradigan qurilmalar va raqamli yechimlarni taqdim etadi."
+    }
+}

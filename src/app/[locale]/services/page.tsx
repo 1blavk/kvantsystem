@@ -1,0 +1,121 @@
+import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+
+import LazyImage from '@/src/components/LazyImage';
+
+import { CirclePlus, MonitorCog, SquarePlus, Store } from "lucide-react";
+import Link from 'next/link';
+import { ServiceDataType, servicesData, LocalizedString } from '../../data/servicesData';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: keyof LocalizedString }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'META_DATA' });
+
+  return {
+    title: t('services_meta'),
+    description: t('services_meta_description'),
+    keywords: t('services_meta_description'),
+  };
+}
+
+export default async function HomePage({ params }: { params: Promise<{ locale: keyof LocalizedString }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'ServicesPage' });
+
+
+  const base = "text-sm cursor-pointer flex items-center gap-2 border-2 border-dashed rounded-full p-2 px-4 border-white/20 transition";
+  const active = "bg-white/10 text-white";
+  const inactive = "text-white/50 hover:bg-white/10";
+
+  return (
+    <>
+      <div className="pt-38 pb-10 mx-auto px-6 bg-[#1E2E3E]">
+        <h1 className="font-bold uppercase text-4xl md:text-6xl sm:text-4xl text-center leading-12 mb-8 bg-gradient-to-t to-[#0EA37F] from-[#01C38E50] text-transparent bg-clip-text">
+          {t('title')}
+        </h1>
+
+        <p className="mb-16 text-center text-xl max-w-[650px] text-shadow-2xs text-shadow-amber-100 mx-auto font-medium text-white/40 leading-10">
+          {t('subtitle')}
+        </p>
+
+
+        <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-10 justify-center px-4">
+
+          {/* SERVICES */}
+          <Link
+            href="/services"
+            className={base + " " + active}
+          >
+            <MonitorCog size={16} strokeWidth={1} />
+            <span>Services</span>
+          </Link>
+
+          {/* STORE */}
+          <Link
+            href="/services"
+            className={base + " " + inactive}
+          >
+            <Store size={16} strokeWidth={1} />
+            <span>Store</span>
+          </Link>
+
+          {/* CALCULATE */}
+          <Link
+            href="/services"
+            className={base + " " + inactive}
+          >
+            <CirclePlus strokeWidth={1} size={16} />
+            <span>Calculate</span>
+            <span>|</span>
+            <div className="bg-white px-2 py-0.5 rounded-full">
+              <p className="text-[11px] font-bold bg-gradient-to-l to-rose-500 from-orange-500 text-transparent bg-clip-text">
+                12
+              </p>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl pb-20">
+        {servicesData.map((service: ServiceDataType, idx) => (
+          <div key={idx} className="p-0 md:p-8 sm:p-0">
+            <ServiceCard service={service} locale={locale} />
+          </div>
+        ))}
+      </div>
+
+
+    </>
+  );
+}
+
+
+export function ServiceCard({ service, locale }: { service: ServiceDataType, locale: keyof LocalizedString }) {
+  return (
+    <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center text-center hover:scale-[1.02] transition-transform duration-300">
+      <div className="bg-[#eee] w-full md:min-h-50 flex items-center justify-center overflow-hidden rounded-md">
+        <LazyImage w={400} h={100} src="/test.png" alt="Security Server Installation - Kvant System" />
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-1 w-full pt-2">
+        <div className="text-left">
+          <h2 className="text-sm sm:text-sm md:text-md font-medium text-[#999] mb-1">
+            {service.title[locale]}
+          </h2>
+          <span className="text-sm bg-orange-200 px-1.5 font-semibold text-orange-400 rounded-2xl">
+            {service.spend[locale]}
+          </span>
+        </div>
+
+        <a
+          href="/services/security-server-installation"
+          className="mt-2 cursor-pointer rounded-md w-full sm:w-full md:w-10 h-10 bg-[#1E2E3E] flex gap-3 items-center justify-center hover:bg-[#01C38E] transition"
+        >
+          <span className="flex sm:flex md:hidden text-sm text-white/80">Details</span>
+          <SquarePlus size={16} strokeWidth={1} color="white" className="hidden md:flex sm:hidden" />
+        </a>
+      </div>
+    </article>
+
+  )
+}

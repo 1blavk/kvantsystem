@@ -1,0 +1,24 @@
+{
+    "__name": "O'zbek",
+    "meta_tag": {
+        "title": "Kvant System",
+        "description": "Kvant System - Zamonaviy muammolar uchun innovatsion yechimlar"
+    },
+    "navbar": {
+        "home": "Bosh sahifa",
+        "home_meta": "Kvant System • Bosh sahifa",
+        "about": "Biz haqimizda",
+        "about_meta": "Kvant System • Biz haqimizda",
+        "services": "Xizmatlar",
+        "services_meta": "Kvant System • Bizning xizmatlarimiz"
+    },
+    "home": {
+        "welcome": "IT xizmatlari",
+        "welcome_sub": "Biz to‘g‘ri yechimlar va qurilmalarni taqdim etamiz, barcha tafsilotlarni hisobga olib, siz biznesingizni rivojlantirasiz.",
+        "explore_services": "Xizmatlarni o'rganish"
+    },
+    "about": {
+        "title": "Biz biznesning o‘sishiga, xavfsizligini ta’minlashga va bugungi bog‘langan dunyoda muvaffaqiyat qozonishga yordam beradigan raqamli yechimlarni taqdim etamiz.",
+        "subtitle": "Ishonchli texnologiyalar va soddalashtirilgan raqamli yechimlar bilan muvaffaqiyatingizni ta’minlaymiz."
+    }
+}

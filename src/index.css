@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Saira", sans-serif;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --dark-color: #1E2E3E;
+  --light-color: #FAFAFA;
+  --primary-color: #01C38E;
+}
+
+::selection {
+  background-color: #fff;
+  color: #111;
+}
+
+.navlink.active {
+  position: relative;
+}
+
+.navlink.active::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  width: 8px;
+  height: 3px;
+  background-color: #91919150;
+  transition: 0.1s ease-out;
+  border-radius: 50px;
+}
+
+.navlink.active:hover::after {
+  width: 15px;
+}
+
+
+
+/* a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus {
+  outline-width: 1px;
+  outline-style: dashed;
+  border-radius: 50px;
+} */
+
+/* Smooth skew clipping */
+.hero {
+  z-index: -1;
+  width: 100%;
+}
+
+.hero:After {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 75%);
+  background: linear-gradient(135deg, #364351 0%, #1E2E3E 100%);
+  z-index: -1;
+}
+
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
