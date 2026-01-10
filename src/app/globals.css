@@ -19,6 +19,11 @@
   }
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+}
+
 ::selection {
   background-color: #e7e7e7;
   color: #111;

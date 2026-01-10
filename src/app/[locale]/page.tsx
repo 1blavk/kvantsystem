@@ -8,9 +8,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'META_DATA' });
 
-  const siteUrl = 'https://kvantsystem.uz'.replace(/\/+$/g, '');
-  const path = locale === 'en' ? '/' : `/${locale}/`;
-  const url = `${siteUrl}${path}`;
+  const siteUrl = 'https://kvantsystem.uz';
+  // Use the current locale to build the correct current URL
+  const currentPath = locale === 'en' ? '/en' : `/${locale}`;
+  const url = `${siteUrl}${currentPath}`;
   const ogImage = `${siteUrl}/og/kvant-system.png`;
 
   return {
@@ -22,32 +23,23 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t('description'),
       url,
       siteName: 'Kvant System',
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: t('title'),
-        },
-      ],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: t('title') }],
       locale: locale.replace('-', '_'),
       type: 'website',
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: t('title'),
-      description: t('description'),
-      images: [ogImage],
-    },
     alternates: {
-      canonical: "https://www.kvantsystem.uz/en",
+      // Dynamic canonical points to the URL of the current language version
+      canonical: url,
       languages: {
-        "ru": "https://www.kvantsystem.uz/ru",
-        "uz": "https://www.kvantsystem.uz/uz"
+        "en": `${siteUrl}/en`,
+        "ru": `${siteUrl}/ru`,
+        "uz": `${siteUrl}/uz`,
+        "x-default": `${siteUrl}/en` // Recommended for search engines
       }
     }
   };
 }
+
 
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

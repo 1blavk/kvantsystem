@@ -13,7 +13,8 @@ type TeamMember = {
     },
     media: {
         id: number;
-        platform: string;
+        _icon?: 'Instagram' | 'MessageCircle';
+        platform: 'Instagram' | 'Telegram';
         color: string;
         link: string;
     }[],
@@ -36,17 +37,42 @@ export const teamData: TeamMember[] = [
         media: [
             {
                 id: 1,
+                _icon: "Instagram",
                 platform: "Instagram",
-                color: "#C16D3C",
-                link: "https://t.me/example",
+                color: "#fb31a7",
+                link: "https://www.instagram.com/islom.0095",
             },
             {
                 id: 2,
+                _icon: "MessageCircle",
                 platform: "Telegram",
-                color: "#527BB3",
-                link: "https://t.me/KVANTSYSTEM",
+                color: "#3388ff",
+                link: "https://t.me/kvantsuz",
             },
         ],
         avatar: "/__team/IslomUrazaliev.png",
+    },
+    {
+        id: 2,
+        name: {
+            en: "Ikrom Urazaliev",
+            uz: "Ikrom Urazaliev",
+            ru: "Икром Уразалиев",
+        },
+        position: {
+            en: "Software Developer",
+            uz: "Dasturiy ta'minot ishlab chiquvchisi",
+            ru: "Разработчик программного обеспечения",
+        },
+        media: [
+            {
+                id: 1,
+                _icon: "Instagram",
+                platform: "Instagram",
+                color: "#fb31a7",
+                link: "https://www.instagram.com/_ikrom25",
+            }
+        ],
+        avatar: "/__team/ikrom.png",
     }
 ]

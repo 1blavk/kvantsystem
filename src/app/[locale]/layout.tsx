@@ -3,9 +3,10 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
 
 import Header from '@/src/components/Header';
-import ProgressBar from '@/src/components/ProgressBar';
 import { Saira } from 'next/font/google';
 import "@/src/app/globals.css";
+import ChatWidget from '@/src/components/ChatWidget';
+
 
 type Props = {
   children: React.ReactNode;
@@ -29,10 +30,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} className={saira.className}>
       <body>
-        <ProgressBar />
         <NextIntlClientProvider locale={locale} messages={(await import(`../../messages/${locale}.json`)).default}>
           <Header />
           {children}
+
+          <ChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>

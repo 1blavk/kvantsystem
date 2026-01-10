@@ -3,8 +3,13 @@ import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
 import ParticlesBg from '@/src/components/ParticlesBg';
-import { Link } from '@/src/i18n/navigation';
 import { teamData } from '../../data/teamData';
+import { Instagram, MessageCircle } from 'lucide-react';
+
+const iconMap = {
+  Instagram,
+  MessageCircle,
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: 'en' | 'uz' | 'ru' }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -53,8 +58,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 key={team.id}
                 className="item  flex flex-col items-center"
               >
-                <div className="flex justify-center bg-gray-100 rounded-xl
-                                    
+                <div className="flex justify-center bg-gray-100
+                                    rounded-xl
+                                    overflow-hidden
+                                    border border-gray-200
                                     min-h-[100px] min-w-[100px]
                                     md:min-h-[200px] md:min-w-[200px]
                                 ">
@@ -77,20 +84,24 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
                   <div className="h-0.5 w-full bg-gray-100"></div>
 
-                  <div className="mt-2 flex justify-center gap-2">
-                    {team.media?.map((mediaItem) => (
-                      <a
-                        key={mediaItem.id}
-                        target="_blank"
-                        href={mediaItem.link}
-                        style={{
-                          '--hover-color': mediaItem.color
-                        } as React.CSSProperties}
-                        className="text-sm text-shadow-2xs hover:font-medium text-gray-500 font-light hover:[color:var(--hover-color)]"
-                      >
-                        {mediaItem.platform}
-                      </a>
-                    ))}
+                  <div className="mt-2 flex justify-center gap-4">
+                    {team.media?.map((mediaItem) => {
+                      const IconComponent = iconMap[mediaItem._icon as keyof typeof iconMap];
+                      return (
+                        <a
+                          key={mediaItem.id}
+                          target="_blank"
+                          href={mediaItem.link}
+                          title={mediaItem.platform}
+                          style={{
+                            '--hover-color': mediaItem.color
+                          } as React.CSSProperties}
+                          className="text-sm text-shadow-2xs hover:font-medium text-gray-500 font-light hover:[color:var(--hover-color)]"
+                        >
+                          {IconComponent && <IconComponent size={20} />}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
