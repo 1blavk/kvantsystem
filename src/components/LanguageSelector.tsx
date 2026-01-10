@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown, Languages } from "lucide-react";
+import { Languages } from "lucide-react";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";

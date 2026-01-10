@@ -1,15 +1,7 @@
 User-agent: *
 Allow: /
 
-<<<<<<< HEAD
-# Block unimportant folders (if they exist)
-# Disallow: /admin/
-
-# Your sitemap URL
-Sitemap: https://kvantsystem.uz/sitemap.xml
-=======
 Sitemap: https://www.kvantsystem.uz/sitemap.xml
 Sitemap: https://www.kvantsystem.uz/en/sitemap.xml
 Sitemap: https://www.kvantsystem.uz/ru/sitemap.xml
 Sitemap: https://www.kvantsystem.uz/uz/sitemap.xml
->>>>>>> 756f706 (alpha-version)

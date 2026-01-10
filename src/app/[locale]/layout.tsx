@@ -32,7 +32,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <ProgressBar />
         <NextIntlClientProvider locale={locale} messages={(await import(`../../messages/${locale}.json`)).default}>
           <Header />
-
           {children}
         </NextIntlClientProvider>
       </body>
