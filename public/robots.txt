@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kvantsystem.uz/sitemap.xml
-Sitemap: https://www.kvantsystem.uz/en/sitemap.xml
-Sitemap: https://www.kvantsystem.uz/ru/sitemap.xml
-Sitemap: https://www.kvantsystem.uz/uz/sitemap.xml
+Sitemap: https://kvantsystem.uz/sitemap.xml
+Sitemap: https://kvantsystem.uz/en/sitemap.xml
+Sitemap: https://kvantsystem.uz/ru/sitemap.xml
+Sitemap: https://kvantsystem.uz/uz/sitemap.xml

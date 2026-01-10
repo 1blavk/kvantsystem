@@ -7,7 +7,7 @@ export default async function Page() {
                 <Bug size={48} className="text-[#999]" />
                 <p className="text-[#999]">404 error</p>
 
-                <a href="/uz">😞 🚗 😞</a>
+                <a href="/uz">Home</a>
             </div>
         </div>
     )
