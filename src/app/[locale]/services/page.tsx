@@ -29,7 +29,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
 
   return (
     <>
-      <div className="pt-38 pb-10 mx-auto px-6 bg-[#1E2E3E]">
+      <div className="pt-36  pb-10 mx-auto px-6 bg-[#1E2E3E]">
         <h1 className="font-bold uppercase text-4xl md:text-6xl sm:text-4xl text-center leading-12 mb-8 bg-gradient-to-t to-[#0EA37F] from-[#01C38E50] text-transparent bg-clip-text">
           {t('title')}
         </h1>

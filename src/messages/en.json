@@ -13,7 +13,10 @@
     "Navbar": {
         "home": "Home",
         "about": "About Us",
-        "services": "Services"
+        "services": "Services",
+        "language": "Language",
+        "change_language": "Change Language",
+        "close": "Close"
     },
     "HomePage": {
         "welcome": "IT support and maintenance",

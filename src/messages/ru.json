@@ -13,7 +13,10 @@
     "Navbar": {
         "home": "Главная",
         "about": "О нас",
-        "services": "Услуги"
+        "services": "Услуги",
+        "language": "Язык",
+        "change_language": "Сменить язык",
+        "close": "Закрыть"
     },
     "HomePage": {
         "welcome": "IT-поддержка и обслуживание",

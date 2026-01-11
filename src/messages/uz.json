@@ -13,7 +13,10 @@
     "Navbar": {
         "home": "Bosh sahifa",
         "about": "Biz haqimizda",
-        "services": "Xizmatlar"
+        "services": "Xizmatlar",
+        "language": "Til o'zgartirish",
+        "change_language": "Tilni o'zgartirish",
+        "close": "Yopish"
     },
     "HomePage": {
         "welcome": "Texnik xizmatlar",

@@ -73,6 +73,6 @@ export const teamData: TeamMember[] = [
                 link: "https://www.instagram.com/_ikrom25",
             }
         ],
-        avatar: "/__team/ikrom.png",
+        avatar: "/__team/IkromUrazaliev.png",
     }
 ]
