@@ -94,7 +94,7 @@ export function ServiceCard({ service, locale }: { service: ServiceDataType, loc
   return (
     <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center text-center hover:scale-[1.02] transition-transform duration-300">
       <div className="bg-[#eee] w-full md:min-h-50 flex items-center justify-center overflow-hidden rounded-md">
-        <LazyImage w={400} h={100} src="/test.png" alt="Security Server Installation - Kvant System" />
+        <LazyImage w={400} h={150} src={service.photo} alt={service.title[locale]} />
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-1 w-full pt-2">

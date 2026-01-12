@@ -12,7 +12,7 @@ interface ParticlesBgProps {
 export default function ParticlesBg({
     type = 'cobweb',
     bg = true,
-    num = 40,
+    num = 80,
     color = '#cccccc'
 }: ParticlesBgProps) {
     const canvasRef = useRef<HTMLCanvasElement>(null);

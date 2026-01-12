@@ -66,15 +66,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                                 hover:rotate-0 
                                 transition-all duration-700 ease
                             "
-            w={500}
-            h={300}
+            w={600}
+            h={400}
             loaderColor="#ddd"
           />
         </div>
 
         {/* RIGHT — TEXT CONTENT */}
         <div className="text-center flex flex-col items-center">
-          <h1 className="uppercase text-3xl sm:text-4xl md:text-3xl font-bold text-gray-200 leading-tight">
+          <h1 className="uppercase text-4xl sm:text-4xl md:text-5xl font-semibold text-gray-200 leading-tight">
             {t('welcome')}
           </h1>
 

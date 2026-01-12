@@ -1,5 +1,6 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
+import type { Viewport } from 'next'
 import { routing } from '@/src/i18n/routing';
 
 import Header from '@/src/components/Header';
@@ -17,6 +18,10 @@ type Props = {
 const saira = Saira({
   subsets: ['latin']
 })
+
+export const viewport: Viewport = {
+  themeColor: '#394E60',
+}
 
 
 export default async function LocaleLayout({ children, params }: Props) {

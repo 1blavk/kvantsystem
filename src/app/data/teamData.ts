@@ -50,7 +50,7 @@ export const teamData: TeamMember[] = [
                 link: "https://t.me/kvantsuz",
             },
         ],
-        avatar: "/__team/IslomUrazaliev.png",
+        avatar: "/__team/Islom.png",
     },
     {
         id: 2,
@@ -60,9 +60,9 @@ export const teamData: TeamMember[] = [
             ru: "Икром Уразалиев",
         },
         position: {
-            en: "Software Developer",
-            uz: "Dasturiy ta'minot ishlab chiquvchisi",
-            ru: "Разработчик программного обеспечения",
+            en: "Frontend developer",
+            uz: "Frontend dasturchi",
+            ru: "Фронтенд разработчик",
         },
         media: [
             {
@@ -73,6 +73,6 @@ export const teamData: TeamMember[] = [
                 link: "https://www.instagram.com/_ikrom25",
             }
         ],
-        avatar: "/__team/IkromUrazaliev.png",
+        avatar: "/__team/Ikrom.png",
     }
 ]

@@ -30,6 +30,7 @@
     },
     "ServicesPage": {
         "title": "Services",
-        "subtitle": "Kvant System delivers devices and digital solutions that help businesses launch, secure, and grow in today’s connected world."
+        "subtitle": "Kvant System delivers devices and digital solutions that help businesses launch, secure, and grow in today’s connected world.",
+        "details": "Details"
     }
 }

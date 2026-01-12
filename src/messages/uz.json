@@ -30,6 +30,7 @@
     },
     "ServicesPage": {
         "title": "Xizmatlar",
-        "subtitle": "Kvant System biznesingizni ishga tushirish, xavfsizligini ta’minlash va rivojlantirishga yordam beradigan qurilmalar va raqamli yechimlarni taqdim etadi."
+        "subtitle": "Kvant System biznesingizni ishga tushirish, xavfsizligini ta’minlash va rivojlantirishga yordam beradigan qurilmalar va raqamli yechimlarni taqdim etadi.",
+        "details": "Batafsil"
     }
 }
