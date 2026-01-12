@@ -19,10 +19,6 @@ const saira = Saira({
   subsets: ['latin']
 })
 
-export const viewport: Viewport = {
-  themeColor: '#394E60',
-}
-
 
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming `locale` is valid

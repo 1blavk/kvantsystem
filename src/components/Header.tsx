@@ -81,7 +81,7 @@ export default function Header() {
                                     key={index}
                                     href={link.to}
                                     className={clsx(
-                                        "navlink font-thin text-sm py-1 px-4 rounded-full transition",
+                                        "navlink font-extrelight text-sm py-1 px-4 rounded-full transition",
                                         isLinkActive(link.to) && "active",
                                         isWhite
                                             ? "text-gray-800 hover:bg-[#eee]"

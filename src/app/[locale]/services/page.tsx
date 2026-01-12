@@ -39,9 +39,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
         </p>
 
 
-        <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-10 justify-center px-4">
+        {/* <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-10 justify-center px-4">
 
-          {/* SERVICES */}
           <Link
             href="/services"
             className={base + " " + active}
@@ -50,7 +49,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
             <span>Services</span>
           </Link>
 
-          {/* STORE */}
           <Link
             href="/services"
             className={base + " " + inactive}
@@ -59,7 +57,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
             <span>Store</span>
           </Link>
 
-          {/* CALCULATE */}
           <Link
             href="/services"
             className={base + " " + inactive}
@@ -73,24 +70,22 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
               </p>
             </div>
           </Link>
-        </div>
+        </div> */}
       </div>
 
       <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl pb-20">
         {servicesData.map((service: ServiceDataType, idx) => (
           <div key={idx} className="p-0 md:p-8 sm:p-0">
-            <ServiceCard service={service} locale={locale} />
+            <ServiceCard service={service} locale={locale} details={t('details')} />
           </div>
         ))}
       </div>
-
-
     </>
   );
 }
 
 
-export function ServiceCard({ service, locale }: { service: ServiceDataType, locale: keyof LocalizedString }) {
+export function ServiceCard({ service, locale, details }: { service: ServiceDataType, locale: keyof LocalizedString, details: string }) {
   return (
     <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center text-center hover:scale-[1.02] transition-transform duration-300">
       <div className="bg-[#eee] w-full md:min-h-50 flex items-center justify-center overflow-hidden rounded-md">
@@ -111,7 +106,7 @@ export function ServiceCard({ service, locale }: { service: ServiceDataType, loc
           href="/services/security-server-installation"
           className="mt-2 cursor-pointer rounded-md w-full sm:w-full md:w-10 h-10 bg-[#1E2E3E] flex gap-3 items-center justify-center hover:bg-[#01C38E] transition"
         >
-          <span className="flex sm:flex md:hidden text-sm text-white/80">Details</span>
+          <span className="flex sm:flex md:hidden text-sm text-white/80">{details}</span>
           <SquarePlus size={16} strokeWidth={1} color="white" className="hidden md:flex sm:hidden" />
         </a>
       </div>
