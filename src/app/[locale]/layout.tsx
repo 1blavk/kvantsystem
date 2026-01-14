@@ -3,7 +3,6 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { routing } from '@/src/i18n/routing';
-import { GoogleTagManager } from '@next/third-parties/google'
 
 import Header from '@/src/components/Header';
 import { Saira } from 'next/font/google';
@@ -85,8 +84,6 @@ export default async function LocaleLayout({ children, params }: Props) {
           {/* <ChatWidget /> */}
         </NextIntlClientProvider>
       </body>
-
-      <GoogleTagManager gtmId="GTM-W7L88BDL" />
     </html>
   );
 }
