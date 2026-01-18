@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
-import ParticlesBg from '@/src/components/ParticlesBg';
+import ParticlesBg from '@/src/components/anime/ParticlesBg';
 import { teamData } from '../../data/teamData';
 import { Instagram, MessageCircle } from 'lucide-react';
 
@@ -28,9 +28,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
 
   return (
-    <>
+    <div className='mb-32'>
 
-      <div className="h-[80vh] absolute w-full -z-10">
+      <div className="h-[85vh] absolute w-full -z-10">
         <ParticlesBg type="cobweb" bg={true} num={40} color="#cccccc" />
       </div>
 
@@ -40,6 +40,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           🚀 {t('subtitle')} 🚀
         </p>
       </div>
+
       <div className="pt-24 max-w-7xl mx-auto px-6">
 
         <h1 className="font-bold text-2xl md:text-5xl text-[#333] text-center leading-14 md:leading-22 mb-6">
@@ -51,7 +52,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <h1 className="uppercase text-center text-md font-bold text-gray-300 tracking-[2px]">{t('team_title')}</h1>
 
         <div className="mt-20">
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-4 grid-cols-2 md:gap-8 gap-4 mt-12 mb-32">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-4 grid-cols-2 md:gap-8 gap-4 mt-12 ">
 
             {teamData.map((team) => (
               <div
@@ -111,10 +112,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </div>
 
-
-
-
       {/* <FeedbackSection /> */}
-    </>
+    </div>
   );
 }

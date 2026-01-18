@@ -1,13 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { ParticlesBgProps } from "./types"
 
-interface ParticlesBgProps {
-    type?: 'cobweb' | 'dots' | 'lines';
-    bg?: boolean;
-    num?: number;
-    color?: string;
-}
 
 export default function ParticlesBg({
     type = 'cobweb',

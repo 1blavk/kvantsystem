@@ -62,20 +62,20 @@ export default function Header() {
             {/* ================= PC NAVBAR ================= */}
             <nav
                 className={clsx(
-                    "pc fixed sm:hidden md:flex w-full flex-col justify-between z-50",
-                    isWhite ? "bg-white backdrop-blur-md shadow-2xl shadow-[#00000010] border-b border-white" : null
+                    "pc  sm:hidden md:flex w-full flex-col justify-between z-50",
+                    isWhite ? "fixed bg-white backdrop-blur-md shadow-2xl shadow-[#00000010] border-b border-white" : null
                 )}
             >
                 <div className={"max-w-7xl mx-auto w-full flex justify-between items-center transition-all duration-400 ease " + (isWhite ? "p-4" : "p-6")}>
                     <Link href="/" className="flex gap-4 items-center">
                         <img src="/logo.png" alt="Logo" className="w-[30px]" />
-                        <h1 className={clsx("text-xl font-semibold uppercase", isWhite ? "text-[#1E2E3E]" : "text-[#FAFAFA]")}>
+                        <h1 className={clsx("hidden sm:hidden md:flex text-xl font-semibold uppercase", isWhite ? "text-[#1E2E3E]" : "text-[#FAFAFA]")}>
                             Kvant System
                         </h1>
                     </Link>
 
                     <div className="flex items-center gap-6">
-                        <div className="hidden md:flex items-center gap-4">
+                        <div className="hidden md:flex items-center gap-6">
                             {nav_links.map((link, index) => (
                                 <Link
                                     key={index}
@@ -96,11 +96,15 @@ export default function Header() {
                         <Link
                             href="tel:+998900650095"
                             className={clsx(
-                                "p-2 rounded-full transition",
-                                isWhite ? "text-gray-900 hover:bg-[#eee]" : "text-white hover:bg-white hover:text-gray-900"
+                                "p-2 px-4 rounded-full transition flex gap-2 items-center",
+                                isWhite ? "text-gray-900 hover:bg-[#eee]" : "text-white"
                             )}
                         >
                             <Phone size={16} />
+                            <h1 className={clsx("flex sm:flex md:hidden text-sm font-semibold uppercase",
+                                isWhite ? "text-[#1E2E3E]" : "text-[#FAFAFA]")}>
+                                +998 90 065 00 95
+                            </h1>
                         </Link>
 
                         <div className=" hidden md:block">

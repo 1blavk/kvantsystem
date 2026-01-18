@@ -3,11 +3,11 @@ import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
 
-import { CirclePlus, MonitorCog, SquarePlus, Store } from "lucide-react";
+import { SquarePlus } from "lucide-react";
 import Link from 'next/link';
-import { ServiceDataType, servicesData, LocalizedString } from '../../data/servicesData';
+import { ServiceDataType, servicesData } from '../../data/servicesData';
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: keyof LocalizedString }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'META_DATA' });
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: k
   };
 }
 
-export default async function HomePage({ params }: { params: Promise<{ locale: keyof LocalizedString }> }) {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'ServicesPage' });
 
@@ -28,7 +28,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
   const inactive = "text-white/50 hover:bg-white/10";
 
   return (
-    <>
+    <div className='mb-32'>
       <div className="pt-36  pb-10 mx-auto px-6 bg-[#1E2E3E]">
         <h1 className="font-bold uppercase text-4xl md:text-6xl sm:text-4xl text-center leading-12 mb-8 bg-gradient-to-t to-[#0EA37F] from-[#01C38E50] text-transparent bg-clip-text">
           {t('title')}
@@ -73,32 +73,32 @@ export default async function HomePage({ params }: { params: Promise<{ locale: k
         </div> */}
       </div>
 
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl pb-20">
+      <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl">
         {servicesData.map((service: ServiceDataType, idx) => (
           <div key={idx} className="p-0 md:p-8 sm:p-0">
             <ServiceCard service={service} locale={locale} details={t('details')} />
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
 
-export function ServiceCard({ service, locale, details }: { service: ServiceDataType, locale: keyof LocalizedString, details: string }) {
+export function ServiceCard({ service, locale, details }: { service: ServiceDataType, locale: string, details: string }) {
   return (
     <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center text-center hover:scale-[1.02] transition-transform duration-300">
       <div className="bg-[#eee] w-full md:min-h-50 flex items-center justify-center overflow-hidden rounded-md">
-        <LazyImage w={400} h={150} src={service.photo} alt={service.title[locale]} />
+        <LazyImage w={400} h={150} src={service.photo} alt={service.title[locale as keyof typeof service.title]} />
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-1 w-full pt-2">
         <div className="text-left">
           <h2 className="text-sm sm:text-sm md:text-md font-medium text-[#999] mb-1">
-            {service.title[locale]}
+            {service.title[locale as keyof typeof service.title]}
           </h2>
           <span className="text-sm bg-orange-200 px-1.5 font-semibold text-orange-400 rounded-2xl">
-            {service.spend[locale]}
+            {service.spend[locale as keyof typeof service.spend]}
           </span>
         </div>
 

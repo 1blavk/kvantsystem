@@ -1,13 +1,9 @@
+import { LocalizedString } from "./types"
+
 export type PricingCriteria = {
     name: string; // e.g., "Basic", "Pro"
     value: string; // e.g., "1 server"
     price: string; // e.g., "$100"
-};
-
-export type LocalizedString = {
-    en: string;
-    uz: string;
-    ru: string;
 };
 
 export type ServiceDataType = {

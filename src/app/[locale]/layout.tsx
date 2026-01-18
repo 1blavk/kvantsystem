@@ -74,7 +74,6 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={saira.className}>
       <Head>
         <meta name="google-site-verification" content="OCO_f-iFaSu9dXSpgi2W4IPMq5t_-Nddr5RX9X2F8Do" />
-
       </Head>
       <body>
         <NextIntlClientProvider locale={locale} messages={(await import(`../../messages/${locale}.json`)).default}>
