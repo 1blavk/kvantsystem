@@ -13,6 +13,7 @@ import {
 import clsx from "clsx";
 import { Link } from "@/src/i18n/navigation";
 import LanguageSelector from "./LanguageSelector";
+import { commonData } from "../data/common";
 
 export default function Header() {
     const [isWhite, setIsWhite] = useState(false);
@@ -94,7 +95,7 @@ export default function Header() {
                         </div>
 
                         <Link
-                            href="tel:+998900650095"
+                            href={`tel:${commonData.socials.phone}`}
                             className={clsx(
                                 "p-2 px-4 rounded-full transition flex gap-2 items-center",
                                 isWhite ? "text-gray-900 hover:bg-[#eee]" : "text-white"
@@ -103,7 +104,7 @@ export default function Header() {
                             <Phone size={16} />
                             <h1 className={clsx("flex sm:flex md:hidden text-sm font-semibold uppercase",
                                 isWhite ? "text-[#1E2E3E]" : "text-[#FAFAFA]")}>
-                                +998 90 065 00 95
+                                {commonData.socials.phone}
                             </h1>
                         </Link>
 

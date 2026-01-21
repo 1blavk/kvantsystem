@@ -9,7 +9,8 @@ import { Saira } from 'next/font/google';
 import "@/src/app/globals.css";
 import Head from 'next/head';
 // import ChatWidget from '@/src/components/ChatWidget';
-
+import JsonLd from "@/src/components/JsonLd";
+import { commonData } from '@/src/data/common';
 
 type Props = {
   children: React.ReactNode;
@@ -69,6 +70,18 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Kvant System",
+    url: commonData.site_URL,
+    logo: "https://kvantsystem.uz/logo.png",
+    sameAs: [
+      commonData.socials.telegram,
+      commonData.socials.instagram,
+    ],
+  };
+
 
   return (
     <html lang={locale} className={saira.className}>
@@ -76,6 +89,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <meta name="google-site-verification" content="OCO_f-iFaSu9dXSpgi2W4IPMq5t_-Nddr5RX9X2F8Do" />
       </Head>
       <body>
+        <JsonLd data={orgJsonLd} />
         <NextIntlClientProvider locale={locale} messages={(await import(`../../messages/${locale}.json`)).default}>
           <Header />
           {children}

@@ -8,6 +8,8 @@ export type PricingCriteria = {
 
 export type ServiceDataType = {
     id: number;
+    slug: string;
+    keywords: string[];
     title: LocalizedString;
     spend: LocalizedString;
     pricing_criterias: {
@@ -22,6 +24,8 @@ export type ServiceDataType = {
 export const servicesData: ServiceDataType[] = [
     {
         id: 1,
+        slug: "cctv",
+        keywords: ["server installation", "office security", "IT services Uzbekistan"],
         title: { en: "CCTV Installation", uz: "Kamera O‘rnatish", ru: "Установка видеонаблюдения" },
         spend: { en: "1-4 days", uz: "1-4 kun", ru: "1-4 дня" },
         pricing_criterias: {
@@ -33,6 +37,8 @@ export const servicesData: ServiceDataType[] = [
     },
     {
         id: 2,
+        slug: "server",
+        keywords: ["server installation", "office security", "IT services Uzbekistan"],
         title: { en: "Server Installation", uz: "Server O‘rnatish", ru: "Установка сервера" },
         spend: { en: "3-7 days", uz: "3-7 kun", ru: "3-7 дня" },
         pricing_criterias: {

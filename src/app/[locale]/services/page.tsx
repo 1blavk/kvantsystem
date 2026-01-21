@@ -3,9 +3,10 @@ import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
 
-import { SquarePlus } from "lucide-react";
+import { CirclePlus, Globe, MonitorCog, SquarePlus, Store } from "lucide-react";
 import Link from 'next/link';
 import { ServiceDataType, servicesData } from '../../data/servicesData';
+import { commonData } from '@/src/data/common';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -39,7 +40,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         </p>
 
 
-        {/* <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-10 justify-center px-4">
+        <div className="flex flex-wrap gap-4 sm:gap-4 md:gap-10 justify-center px-4">
 
           <Link
             href="/services"
@@ -61,16 +62,24 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             href="/services"
             className={base + " " + inactive}
           >
+            <Globe size={16} strokeWidth={1} />
+            <span>Software</span>
+          </Link>
+
+          <Link
+            href="/services"
+            className={base + " " + inactive}
+          >
             <CirclePlus strokeWidth={1} size={16} />
-            <span>Calculate</span>
+            <span>Hisoblash</span>
             <span>|</span>
-            <div className="bg-white px-2 py-0.5 rounded-full">
+            <div className="bg-white px-1.5 py-0.5 rounded-full">
               <p className="text-[11px] font-bold bg-gradient-to-l to-rose-500 from-orange-500 text-transparent bg-clip-text">
                 12
               </p>
             </div>
           </Link>
-        </div> */}
+        </div>
       </div>
 
       <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl">
@@ -87,28 +96,47 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
 
 export function ServiceCard({ service, locale, details }: { service: ServiceDataType, locale: string, details: string }) {
   return (
-    <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center text-center hover:scale-[1.02] transition-transform duration-300">
+    <article className="bg-white border border-gray-100 shadow-lg rounded-lg p-2 flex flex-col items-center hover:scale-[1.02] transition-transform duration-300">
       <div className="bg-[#eee] w-full md:min-h-50 flex items-center justify-center overflow-hidden rounded-md">
-        <LazyImage w={400} h={150} src={service.photo} alt={service.title[locale as keyof typeof service.title]} />
+        <LazyImage w={400} h={150} src={service.photo} alt={service.title[locale as keyof typeof service.title] + " – professional IT service in Uzbekistan"} />
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-1 w-full pt-2">
-        <div className="text-left">
-          <h2 className="text-sm sm:text-sm md:text-md font-medium text-[#999] mb-1">
-            {service.title[locale as keyof typeof service.title]}
-          </h2>
-          <span className="text-sm bg-orange-200 px-1.5 font-semibold text-orange-400 rounded-2xl">
-            {service.spend[locale as keyof typeof service.spend]}
-          </span>
+      <div className='w-full'>
+        <div className="flex flex-wrap items-center justify-between gap-1 w-full pt-2">
+          <div className="text-left">
+            <h3 className="text-md md:text-md font-medium text-[#333] mb-1">
+              {service.title[locale as keyof typeof service.title]}
+            </h3>
+
+            <span className="text-sm bg-orange-200 px-1.5 font-semibold text-orange-400 rounded-2xl">
+              {service.spend[locale as keyof typeof service.spend]}
+            </span>
+          </div>
+
+          <a
+            href={"tel:" + commonData.socials.phone}
+            rel={"noreferrer"}
+            className="mt-2 cursor-pointer rounded-md w-full sm:w-full md:w-10 h-10 bg-[#1E2E3E] flex gap-3 items-center justify-center hover:bg-[#01C38E] transition"
+          >
+            <span className="flex sm:flex md:hidden text-sm text-white/80">{details}</span>
+            <SquarePlus size={16} strokeWidth={1} color="white" className="hidden md:flex sm:hidden" />
+          </a>
         </div>
 
-        <a
-          href="/services/security-server-installation"
-          className="mt-2 cursor-pointer rounded-md w-full sm:w-full md:w-10 h-10 bg-[#1E2E3E] flex gap-3 items-center justify-center hover:bg-[#01C38E] transition"
-        >
-          <span className="flex sm:flex md:hidden text-sm text-white/80">{details}</span>
-          <SquarePlus size={16} strokeWidth={1} color="white" className="hidden md:flex sm:hidden" />
-        </a>
+        {/* <div className='flex flex-wrap mt-2 gap-2'>
+          {service.keywords.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
+            >
+              #{tag.replace(/\s+/g, "")}
+            </span>
+          ))}
+        </div> */}
+
+        <p className="sr-only">
+          {service.keywords.join(", ")}
+        </p>
       </div>
     </article>
 
