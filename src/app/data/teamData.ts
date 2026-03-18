@@ -47,7 +47,7 @@ export const teamData: TeamMember[] = [
                 _icon: "MessageCircle",
                 platform: "Telegram",
                 color: "#3388ff",
-                link: "https://t.me/kvantsuz",
+                link: "https://t.me/kvantsystem",
             },
         ],
         avatar: "/__team/Islom.png",
