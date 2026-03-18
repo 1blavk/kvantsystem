@@ -60,17 +60,17 @@ export const teamData: TeamMember[] = [
             ru: "Икром Уразалиев",
         },
         position: {
-            en: "Frontend developer",
-            uz: "Frontend dasturchi",
-            ru: "Фронтенд разработчик",
+            en: "-",
+            uz: "-",
+            ru: "разработчик",
         },
         media: [
             {
                 id: 1,
-                _icon: "Instagram",
-                platform: "Instagram",
-                color: "#fb31a7",
-                link: "https://www.instagram.com/_ikrom25",
+                _icon: "MessageCircle",
+                platform: "Telegram",
+                color: "#3388ff",
+                link: "https://t.me/im_ikrom",
             }
         ],
         avatar: "/__team/Ikrom.png",
