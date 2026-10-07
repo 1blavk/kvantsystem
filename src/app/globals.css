@@ -121,3 +121,23 @@ nav {
   background: linear-gradient(135deg, #364351 0%, #1E2E3E 100%);
   z-index: -1;
 }
+
+@keyframes topTicker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-top-ticker {
+  display: flex;
+  width: max-content;
+  animation: topTicker 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-top-ticker:hover {
+  animation-play-state: paused;
+}

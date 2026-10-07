@@ -13,6 +13,7 @@ import {
 import clsx from "clsx";
 import { Link } from "@/src/i18n/navigation";
 import LanguageSelector from "./LanguageSelector";
+import TestModeBanner from "./TestModeBanner";
 import { commonData } from "../data/common";
 
 export default function Header() {
@@ -55,11 +56,14 @@ export default function Header() {
 
     return (
         <>
+            {/* Top Moving Marquee Test Mode Notice */}
+            <TestModeBanner />
+
             {/* ================= PC NAVBAR ================= */}
             <nav
                 className={clsx(
                     "pc  sm:hidden md:flex w-full flex-col justify-between z-50",
-                    isWhite ? "fixed bg-white backdrop-blur-md shadow-2xl shadow-[#00000010] border-b border-white" : null
+                    isWhite ? "fixed top-7 left-0 bg-white backdrop-blur-md shadow-2xl shadow-[#00000010] border-b border-white" : null
                 )}
             >
                 <div className={"max-w-7xl mx-auto w-full flex justify-between items-center transition-all duration-400 ease " + (isWhite ? "p-4" : "p-6")}>

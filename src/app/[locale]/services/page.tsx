@@ -68,7 +68,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
           </Link>
 
           <Link
-            href="/services"
+            href="/services/calculate"
             className={base + " " + inactive}
           >
             <CirclePlus strokeWidth={1} size={16} />
