@@ -3,9 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
 import { Link } from '@/src/i18n/navigation';
-
-// DATA
-import { awardsData, AwardsDataType } from '../data/awardsData';
+import HomePageAnimations from '@/src/components/anime/HomePageAnimations';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -52,11 +50,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <main className="mb-32">
 
-      <div className='hero w-full px-4'>
+      <div className='hero hero-section w-full px-4'>
         <div className="max-w-7xl md:mt-2 sm:mt-10 mt-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* LEFT — IMAGE */}
-          <div className="relative min-h-32 md:top-20 flex justify-center order-1 md:order-none">
+          <div className="hero-image-wrap relative min-h-32 md:top-20 flex justify-center order-1 md:order-none">
             <LazyImage
               src="/server-card.png"
               alt={"Server Card"}
@@ -104,31 +102,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </div>
 
-      {/* <div className="awards">
-
-
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-center gap-32">
-          <LazyImage
-            src="/__awards/award1.png"
-            alt="Award 1"
-            w={100}
-            h={100}
-            className="max-h-16 object-contain grayscale transition-all hover:grayscale-0"
-          />
-          {
-            awardsData.map((item, _): AwardsDataType[] => {
-              <LazyImage
-                key={item.id}
-                src={item.photo}
-                alt={item.alt["uz"]}
-                w={100}
-                h={100}
-                className="max-h-16 object-contain grayscale transition-all hover:grayscale-0"
-              />
-            })
-          }
-        </div>
-      </div> */}
+      {/* GSAP SCROLL ANIMATIONS: WHY CHOOSE US, STATS, SERVICES PREVIEW, AND TEAM */}
+      <HomePageAnimations
+        key={locale}
+        locale={locale}
+        tExploreServices={t('explore_services')}
+        tLearnMore={t('learn_more')}
+        tServicesTitle={t('services_title')}
+        tServicesSubtitle={t('services_sub')}
+        tTeamTitle={t('team_title')}
+        tWhyChooseUs={t('why_choose_us')}
+        tWhyChooseUsSubtitle={t('why_choose_us_sub')}
+      />
 
     </main>
   );

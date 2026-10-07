@@ -21,7 +21,13 @@
     "HomePage": {
         "welcome": "Texnik xizmatlar",
         "welcome_sub": "Ilg‘or texnologiyalardan tortib korporativ qurilmalargacha — biznesingiz xavfsiz, samarali va kengayishga tayyor bo‘lishi uchun barcha jarayonlarni biz boshqaramiz.",
-        "explore_services": "Xizmatlarni ko‘rish"
+        "explore_services": "Xizmatlarni ko‘rish",
+        "why_choose_us": "Nima uchun biz?",
+        "why_choose_us_sub": "Barqarorlik va korporativ miqyos uchun yaratilgan yuqori standartli muhandislik yechimlari",
+        "services_title": "Asosiy IT va Texnik Xizmatlar",
+        "services_sub": "Biznes samaradorligi va xavfsizligini ta'minlash uchun ishlab chiqilgan kompleks infratuzilma yechimlari.",
+        "team_title": "Bizning Muhandislar Jamoasi",
+        "learn_more": "Batafsil"
     },
     "AboutPage": {
         "title": "Biznesingizni rivojlantirish va xavfsizligini ta’minlash uchun ishonchli yechimlar",
@@ -31,6 +37,10 @@
     "ServicesPage": {
         "title": "Xizmatlar",
         "subtitle": "Kvant System biznesingizni ishga tushirish, xavfsizligini ta’minlash va rivojlantirishga yordam beradigan qurilmalar va raqamli yechimlarni taqdim etadi.",
-        "details": "Batafsil"
+        "details": "Batafsil",
+        "services_tab": "Xizmatlar",
+        "store_tab": "Do‘kon",
+        "software_tab": "Dasturlar",
+        "calculate_tab": "Hisoblash"
     }
 }

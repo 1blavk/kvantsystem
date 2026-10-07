@@ -21,7 +21,13 @@
     "HomePage": {
         "welcome": "IT support and maintenance",
         "welcome_sub": "From advanced technology to enterprise devices, we manage everything to keep your business secure, efficient, and scalable.",
-        "explore_services": "Explore service"
+        "explore_services": "Explore service",
+        "why_choose_us": "Why Choose Us",
+        "why_choose_us_sub": "High-standard engineering solutions built for stability & enterprise scale",
+        "services_title": "Core IT & Technical Services",
+        "services_sub": "End-to-end infrastructure solutions custom designed for business efficiency and security.",
+        "team_title": "Our Engineering Team",
+        "learn_more": "Learn More"
     },
     "AboutPage": {
         "title": "Reliable IT Solutions for Business Growth and Security",
@@ -31,6 +37,10 @@
     "ServicesPage": {
         "title": "Services",
         "subtitle": "Kvant System delivers devices and digital solutions that help businesses launch, secure, and grow in today’s connected world.",
-        "details": "Details"
+        "details": "Details",
+        "services_tab": "Services",
+        "store_tab": "Store",
+        "software_tab": "Software",
+        "calculate_tab": "Calculate"
     }
 }

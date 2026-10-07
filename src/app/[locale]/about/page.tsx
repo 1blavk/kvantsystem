@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import LazyImage from '@/src/components/LazyImage';
 import ParticlesBg from '@/src/components/anime/ParticlesBg';
+import TeamScrollGrid from '@/src/components/anime/TeamScrollGrid';
 import { teamData } from '../../data/teamData';
 import { Instagram, MessageCircle } from 'lucide-react';
 
@@ -52,8 +53,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <h1 className="uppercase text-center text-md font-bold text-gray-300 tracking-[2px]">{t('team_title')}</h1>
 
         <div className="mt-20">
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-4 grid-cols-2 md:gap-8 gap-4 mt-12 ">
-
+          <TeamScrollGrid key={locale}>
             {teamData.map((team) => (
               <div
                 key={team.id}
@@ -107,8 +107,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </div>
               </div>
             ))}
-
-          </div>
+          </TeamScrollGrid>
         </div>
       </div>
 

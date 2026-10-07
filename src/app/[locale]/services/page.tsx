@@ -4,9 +4,10 @@ import { getTranslations } from 'next-intl/server';
 import LazyImage from '@/src/components/LazyImage';
 
 import { CirclePlus, Globe, MonitorCog, SquarePlus, Store } from "lucide-react";
-import Link from 'next/link';
+import { Link } from '@/src/i18n/navigation';
 import { ServiceDataType, servicesData } from '../../data/servicesData';
 import { commonData } from '@/src/data/common';
+import ServicesScrollGrid from '@/src/components/anime/ServicesScrollGrid';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -47,7 +48,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             className={base + " " + active}
           >
             <MonitorCog size={16} strokeWidth={1} />
-            <span>Services</span>
+            <span>{t('services_tab')}</span>
           </Link>
 
           <Link
@@ -55,7 +56,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             className={base + " " + inactive}
           >
             <Store size={16} strokeWidth={1} />
-            <span>Store</span>
+            <span>{t('store_tab')}</span>
           </Link>
 
           <Link
@@ -63,7 +64,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             className={base + " " + inactive}
           >
             <Globe size={16} strokeWidth={1} />
-            <span>Software</span>
+            <span>{t('software_tab')}</span>
           </Link>
 
           <Link
@@ -71,24 +72,24 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             className={base + " " + inactive}
           >
             <CirclePlus strokeWidth={1} size={16} />
-            <span>Hisoblash</span>
+            <span>{t('calculate_tab')}</span>
             <span>|</span>
             <div className="bg-white px-1.5 py-0.5 rounded-full">
               <p className="text-[11px] font-bold bg-gradient-to-l to-rose-500 from-orange-500 text-transparent bg-clip-text">
-                12
+                {servicesData.length}
               </p>
             </div>
           </Link>
         </div>
       </div>
 
-      <div className="mt-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 px-4 mx-auto max-w-7xl">
+      <ServicesScrollGrid key={locale}>
         {servicesData.map((service: ServiceDataType, idx) => (
           <div key={idx} className="p-0 md:p-8 sm:p-0">
             <ServiceCard service={service} locale={locale} details={t('details')} />
           </div>
         ))}
-      </div>
+      </ServicesScrollGrid>
     </div>
   );
 }

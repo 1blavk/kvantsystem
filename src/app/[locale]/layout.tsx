@@ -5,9 +5,9 @@ import type { Metadata } from 'next';
 import { routing } from '@/src/i18n/routing';
 
 import Header from '@/src/components/Header';
+import SmoothScrollProvider from '@/src/components/SmoothScrollProvider';
 import { Saira } from 'next/font/google';
 import "@/src/app/globals.css";
-import Head from 'next/head';
 // import ChatWidget from '@/src/components/ChatWidget';
 import JsonLd from "@/src/components/JsonLd";
 import { commonData } from '@/src/data/common';
@@ -84,15 +84,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
 
   return (
-    <html lang={locale} className={saira.className}>
-      <Head>
-        <meta name="google-site-verification" content="OCO_f-iFaSu9dXSpgi2W4IPMq5t_-Nddr5RX9X2F8Do" />
-      </Head>
-      <body>
+    <html lang={locale} className={saira.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <JsonLd data={orgJsonLd} />
         <NextIntlClientProvider locale={locale} messages={(await import(`../../messages/${locale}.json`)).default}>
-          <Header />
-          {children}
+          <SmoothScrollProvider key={locale}>
+            <Header />
+            {children}
+          </SmoothScrollProvider>
 
           {/* <ChatWidget /> */}
         </NextIntlClientProvider>

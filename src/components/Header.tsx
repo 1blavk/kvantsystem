@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from 'next/navigation';
 import {
@@ -16,7 +16,6 @@ import LanguageSelector from "./LanguageSelector";
 import { commonData } from "../data/common";
 
 export default function Header() {
-    const [isWhite, setIsWhite] = useState(false);
     const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
     const t = useTranslations("Navbar");
@@ -35,16 +34,12 @@ export default function Header() {
     };
 
     const cleanPath = normalizePath(pathname);
+    const isWhite = cleanPath !== "/";
 
     const isLinkActive = (linkTo: string): boolean => {
         if (linkTo === '/') return cleanPath === '/';
         return cleanPath === linkTo || cleanPath.startsWith(linkTo + '/');
     };
-
-    useEffect(() => {
-        if (cleanPath === "/") setIsWhite(false);
-        else setIsWhite(true);
-    }, [cleanPath]);
 
     const nav_links = [
         { to: "/", label: t('home'), icon: Home },
